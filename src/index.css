@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #030835;
+  --color-searchbar: #222C4F;
+  --color-circle-line: #222C4F;
+  --color-star: #F2C94C;
+  --color-favorite: #724CF9;
+}
+
+body {
+  @apply bg-brand;
+  font-family: Inter;
+}
+
+/* تنظیم سراسری box-sizing */
+*,
+*::before,
+*::after {
+  @apply box-border;
+}
+
+.remove-line:last-child {
+  border-bottom: none !important;
+}
