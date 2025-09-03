@@ -26,8 +26,7 @@ const SearchBar = () => {
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
 
-  let x1 = "block ",
-    x2 = "hidden";
+
   useEffect(() => {
     if (listening) setQuery(transcript);
   }, [transcript, listening]);
@@ -45,6 +44,7 @@ const SearchBar = () => {
       continuous: true,
       language: "en-US",
     });
+    console.log("jjjjjjjjjjj")
   };
 
   if (!browserSupportsSpeechRecognition) {
@@ -66,17 +66,15 @@ const SearchBar = () => {
         className="flex-1 bg-transparent outline-none text-gray-300"
       />
 
-      <button
-        type="button"
-        onClick={startListening}
-        className="ml-2"
-      >
-        <img src={micImg} alt="mic" />
-      </button>
-
-      <button type="button" className="ml-2" onClick={stopListening}>
-        <img src={micImg} alt="mic" className={`opacity-50 grayscale` } />
-      </button>
+      {listening ? (
+        <button type="button" className="ml-2 border-l-2 border-b-black pl-3" onClick={stopListening}>
+          <img src={micImg} alt="mic" className={`opacity-50 grayscale`} />
+        </button>
+      ) : (
+        <button type="button" onClick={startListening} className="ml-2 border-l-2 border-b-black pl-3">
+          <img src={micImg} alt="mic" />
+        </button>
+      )}
     </form>
   );
 };

@@ -7,7 +7,7 @@ const Home = () => {
     <Container>
       <div className="flex flex-col gap-y-8 justify-center items-center">
         <div className="flex mt-[204px] md:mt-20"></div>
-          <h1 className="text-white font-black w-fit text-[100px] md:text-[140px]">
+        <h1 className="text-white font-black w-fit text-[100px] md:text-[140px]">
           IAMDb
         </h1>
 

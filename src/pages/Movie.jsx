@@ -84,15 +84,15 @@ const Movie = () => {
                 <ShowDetailSection movie={movie} />
                 <button
                   onClick={() => changeFavorites(movie.id)}
-                  className="h-[41px] leading-[41px] rounded-[12px] text-white font-normal text-sm fixed bottom-0 right-0 left-0"
+                  className="h-[41px] leading-[41px] rounded-[12px] text-white font-normal text-sm fixed bottom-3 right-0 left-0 "
                 >
-                  {/*اگر فیلم در لیست موردعلاقه باشد قلب قرمز نمایش داده میشود در غیراینصورت قلب معمولی*/}
+                  {/*اگر فیلم در لیست موردعلاقه باشد دکمه ریمو از لسیت نمایش داده میشود در غیراینصورت دکمه ادد تو لیست*/}
                   {isFavorite(favorites, movie.id) ? (
-                    <div className="bg-favorite h-full">
+                    <div className="bg-circle-line h-full rounded-xl">
                       Remove from Favorite
                     </div>
                   ) : (
-                    <div className="bg-circle-line h-full ">
+                    <div className="bg-favorite h-fullbg-circle-line h-full rounded-xl">
                       Add to Favorite
                     </div>
                   )}
