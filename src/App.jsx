@@ -6,8 +6,7 @@ import List from "@/pages/List";
 import Movie from "@/pages/Movie";
 import { useReducer } from "react";
 import { FavoriteReducer } from "@/reducer/FavoriteReducer";
-import { FavoriteContext } from "./context/FavoriteContext";
-import Dictaphone from "./pages/Dictaphone";
+import { FavoriteContext } from "@/context/FavoriteContext";
 
 const App = () => {
   const [favorites, dispatch] = useReducer(FavoriteReducer, []);
@@ -18,7 +17,6 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/list" element={<List />} />
           <Route path="/movie/:id" element={<Movie />} />
-          <Route path="/Dictaphone" element={<Dictaphone />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </FavoriteContext.Provider>
