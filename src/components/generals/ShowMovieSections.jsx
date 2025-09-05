@@ -8,7 +8,7 @@ export const ShowAboutSection = ({ movie, isFavorite }) => {
   return (
     <>
       <div className="flex justify-between items-center">
-        <h2 className="font-bold text-[48px] w-full text-white">
+        <h2 className="font-bold text-[48px] w-full ">
           {movie.title}
         </h2>
 
@@ -23,7 +23,7 @@ export const ShowAboutSection = ({ movie, isFavorite }) => {
 
       {movie.genres && <ShowGenres movieId={movie.id} genres={movie.genres} />}
 
-      <p className="font-normal text-sm text-white mt-[18px] leading-6">
+      <p className="font-normal text-sm  mt-[18px] leading-6">
         {movie.plot}
       </p>
 
@@ -48,8 +48,8 @@ export const ShowProgressBarSection = ({ rating, votes }) => {
       {/* پروگرس بار */}
       <ProgressBar percentage={rating * 10} />
       <div>
-        <p className="font-bold text-base text-white">{votes}</p>
-        <p className="font-normal text-sm text-white opacity-60">
+        <p className="font-bold text-base ">{votes}</p>
+        <p className="font-normal text-sm  opacity-60">
           ratings on IMDB
         </p>
       </div>
@@ -60,7 +60,7 @@ export const ShowProgressBarSection = ({ rating, votes }) => {
 export const ShowRatingsSection = ({ ratings }) => {
   return (
     <>
-      <ul className="font-normal text[13px] text-white opacity-50 mt-[30px]">
+      <ul className="font-normal text[13px]  opacity-50 mt-[30px]">
         {ratings &&
           ratings.map((rating) => (
             <li key={rating.Value}>
@@ -76,10 +76,10 @@ export const ShowRatingsSection = ({ ratings }) => {
 export const ShowDetailSection = ({ movie }) => {
   return (
     <>
-      <p className="font-bold text-[28px] text-white leading-12 mt-[18px]">
+      <p className="font-bold text-[28px]  leading-12 mt-[18px]">
         Details
       </p>
-      <ul className="font-normal text-sm text-white ">
+      <ul className="font-normal text-sm  ">
         <ShowDetail title="Directors" detail={movie.director} />
         <ShowDetail title="Writers" detail={movie.writer} />
         <ShowDetail title="Actors" detail={movie.actors} />

@@ -20,7 +20,7 @@ const ProgressBar = ({
       ></div>
 
       {/* متن درصد وسط */}
-      <div className="absolute inset-0 flex items-center justify-center text-2xl font-bold text-white">
+      <div className="absolute inset-0 flex items-center justify-center text-2xl font-bold">
         {percentage / 10}
       </div>
     </div>

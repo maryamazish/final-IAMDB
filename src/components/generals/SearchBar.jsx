@@ -44,7 +44,6 @@ const SearchBar = () => {
       continuous: true,
       language: "en-US",
     });
-    console.log("jjjjjjjjjjj")
   };
 
   if (!browserSupportsSpeechRecognition) {
@@ -67,11 +66,11 @@ const SearchBar = () => {
       />
 
       {listening ? (
-        <button type="button" className="ml-2 border-l-2 border-b-black pl-3" onClick={stopListening}>
+        <button type="button" className="ml-2 border-l-2 text-black pl-3" onClick={stopListening}>
           <img src={micImg} alt="mic" className={`opacity-50 grayscale`} />
         </button>
       ) : (
-        <button type="button" onClick={startListening} className="ml-2 border-l-2 border-b-black pl-3">
+        <button type="button" onClick={startListening} className="ml-2 border-l-2 text-black pl-3">
           <img src={micImg} alt="mic" />
         </button>
       )}

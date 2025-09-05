@@ -12,7 +12,7 @@ const Genres = () => {
       );
       const data = await responseGenres.json();
       setGenres(data);
-      console.log("genres", data);
+      // console.log("genres", data);
     } catch (error) {
       console.log("error.message :", error.message);
     }

@@ -1,7 +1,7 @@
 import { AiFillStar } from "react-icons/ai";
 import { GoHeart } from "react-icons/go";
 import { GoHeartFill } from "react-icons/go";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useMemo } from "react";
 import { Link } from "react-router-dom";
 import Circle from "@comps/generals/Circle";
 import ShowGenres from "@comps/generals/ShowGenres";
@@ -63,13 +63,16 @@ const MoviesListInfinite = ({ searchType, searchQuery }) => {
     setMovies((prev) => [...prev, ...data]);
     setPage((prev) => prev + 1);
   };
+
+  //از یوزممو نمیشه استفاده کرد چون فانکشن getMoviesFirstPage آسینک هست
   useEffect(() => {
     getMoviesFirstPage();
   }, [searchQuery]);
 
+
   // useEffect(() => {
-  //   console.log("favorites", favorites);
-  // }, [favorites]);
+  //   console.log("hasMore", hasMore);
+  // }, [hasMore]);
 
   // فانکشن اضافه کردن فیلم به لیست موردعلاقهها یا خارج کردن از لیست موردعلاقه ها
   const changeFavorites = (movieId) => {
@@ -85,7 +88,9 @@ const MoviesListInfinite = ({ searchType, searchQuery }) => {
         dataLength={movies.length} // تعداد آیتم فعلی
         next={getMoreMovies} // فانکشنی که داده جدید میاره
         hasMore={hasMore} // آیا هنوز داده‌ای هست یا نه
-        loader={movies.length ? <h4>Loading...</h4> : <h4>No Result...</h4>}
+        loader={
+          (!!movies.length && hasMore) ? <h4 className="text-black">Loading...</h4> : <h4 className="text-black">No Result...</h4>
+        }
       >
         {movies.length ? (
           <ul className="mt-8 w-full flex flex-col">
@@ -102,7 +107,7 @@ const MoviesListInfinite = ({ searchType, searchQuery }) => {
                   />
                 </div>
                 <div className="flex flex-col w-full flex-1">
-                  <div className="flex items-center">
+                  <div className="flex items-center gap-1">
                     <Link
                       to={`/movie/${movie.id}`}
                       state={{ isFavorite: isFavorite(favorites, movie.id) }} //برای چک کردن وضعیت نمایش قلب توپر یا قلب توخالی
@@ -116,7 +121,7 @@ const MoviesListInfinite = ({ searchType, searchQuery }) => {
                       onClick={() => changeFavorites(movie.id)}
                       className="text-2xl w-6 h-6 mr-2"
                     >
-                      {/*اگر فیلم در لیست موردعلاقه باشد قلب قرمز نمایش داده میشود در غیراینصورت قلب معمولی*/}
+                      {/*اگر فیلم در لیست موردعلاقه باشد قلب آبی نمایش داده میشود در غیراینصورت قلب بیرنگ*/}
                       {isFavorite(favorites, movie.id) ? (
                         <GoHeartFill className="text-favorite" />
                       ) : (

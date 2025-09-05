@@ -49,9 +49,9 @@ const Movie = () => {
     getMovie();
   }, [params.id]);
 
-  useEffect(() => {
-    console.log("ratings", movie.ratings);
-  }, [movie.ratings]);
+  // useEffect(() => {
+  //   console.log("ratings", movie.ratings);
+  // }, [movie.ratings]);
 
   return (
     <>
