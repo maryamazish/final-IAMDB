@@ -84,7 +84,7 @@ const Movie = () => {
                 <ShowDetailSection movie={movie} />
                 <button
                   onClick={() => changeFavorites(movie.id)}
-                  className="h-[41px] leading-[41px] rounded-[12px] text-white font-normal text-sm fixed bottom-3 right-0 left-0 "
+                  className="h-[41px] leading-[41px] rounded-[12px]  font-normal text-sm fixed bottom-3 right-0 left-0 "
                 >
                   {/*اگر فیلم در لیست موردعلاقه باشد دکمه ریمو از لسیت نمایش داده میشود در غیراینصورت دکمه ادد تو لیست*/}
                   {isFavorite(favorites, movie.id) ? (
