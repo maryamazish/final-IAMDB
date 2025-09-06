@@ -43,7 +43,7 @@ const MoviesListInfinite = ({ searchType, searchQuery }) => {
 
       setMovies(data);
 
-      console.log("movies", data);
+      // console.log("movies", data);
     } catch (error) {
       console.log("error.message :", error.message);
     }
